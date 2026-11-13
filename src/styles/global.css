@@ -1,4 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-palette-dark: #287A74;
+  --color-palette-medium: #55A9A0;
+}
 
 @custom-variant dark (&:where(.dark, .dark * ));
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+}

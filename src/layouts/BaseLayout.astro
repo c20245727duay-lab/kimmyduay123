@@ -7,7 +7,7 @@ const name = "Kimmy Duay";
 const position = "Web Developer";
 ---
 
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,9 +16,17 @@ const position = "Web Developer";
         <meta name="generator" content={Astro.generator} />
         <title>{name} | {position}</title>
     </head>
-    <body>
-        <Header />
-        <slot />
-        <Footer />
+    <body class="bg-palette-dark text-neutral-800 dark:bg-neutral-950 dark:text-neutral-100 min-h-screen p-4 sm:p-8 flex items-center justify-center font-sans antialiased">
+        <div id="progressBar" class="fixed top-0 left-0 z-50 h-1 w-full origin-left bg-orange-500"></div>
+        <div class="bg-white/90 dark:bg-neutral-900 w-full max-w-5xl rounded-[32px] p-6 sm:p-10 shadow-2xl border border-palette-medium/30 dark:border-neutral-800 transition-colors duration-500">
+            <Header />
+            <main class="py-10 space-y-12">
+                <slot />
+            </main>
+            <Footer />
+        </div>
+        <script>
+            import "../scripts/animations.js";
+        </script>
     </body>
 </html>
